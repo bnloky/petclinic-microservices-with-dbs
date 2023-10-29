@@ -107,7 +107,29 @@
                                 </configuration>
                             </execution>
                         </executions>
-                    </plugin>
+		</plugin>
+
+                <plugin>
+		 <groupId>org.jacoco</groupId>
+	          <artifactId>jacoco-maven-plugin</artifactId>
+		   <version>0.8.2</version>
+	 	    <executions>
+	             <execution>
+		      <goal>
+			<goal>prepare-agent</goal>
+		</goals>
+	       </executio>
+	      <!-- attached to Maven test phase -->
+	     <execution>
+	    <id>report</id>
+	  <phase>test</phase>
+	 <goals>
+        <goal>report</goal>
+      </goals>
+    </execution>						 														
+   </execution>
+ </plugin>
+
 
                     <!-- Spring Boot Actuator displays build-related information if a META-INF/build-info.properties file is present -->
                     <plugin>
